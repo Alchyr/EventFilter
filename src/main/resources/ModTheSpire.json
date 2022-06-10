@@ -1,0 +1,11 @@
+{
+  "modid": "${project.artifactId}",
+  "name": "${project.name}",
+  "author_list": ["Alchyr"],
+  "description": "Allows disabling of events. No guarantees are made that disabling events will not cause problems.",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": ["basemod"],
+  "update_json": ""
+}

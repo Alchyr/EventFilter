@@ -1,0 +1,15 @@
+{
+  "eventfilter:eventfilter": {
+    "TEXT": [
+      "Event Filter",
+      "Alchyr",
+      "Tool for disabling events.",
+      "Events"
+    ]
+  },
+  "eventfilter:EventScreen": {
+    "TEXT": [
+      "Event Preview"
+    ]
+  }
+}
