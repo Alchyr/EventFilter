@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.screens.mainMenu.MenuCancelButton;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
 import eventfilter.EventFilter;
+import eventfilter.dummy.DummyEventRoom;
 import eventfilter.dummy.DummyPlayer;
 import eventfilter.dummy.DummyScene;
 import eventfilter.screen.labels.CollapsibleModLabel;
@@ -103,7 +104,7 @@ public class EventScreen implements ScrollBarListener {
         AbstractDungeon.player = new DummyPlayer();
         AbstractDungeon.overlayMenu = new OverlayMenu(AbstractDungeon.player);
         AbstractDungeon.currMapNode = new MapRoomNode(1, 1);
-        AbstractDungeon.currMapNode.room = new EventRoom();
+        AbstractDungeon.currMapNode.room = new DummyEventRoom();
 
         eventBackgroundImg = ImageMaster.loadImage("images/ui/event/panel.png");
     }

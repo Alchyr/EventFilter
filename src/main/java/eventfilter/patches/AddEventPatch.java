@@ -11,8 +11,8 @@ import eventfilter.EventFilter;
         paramtypez = { AddEventParams.class }
 )
 public class AddEventPatch {
-    @SpirePostfixPatch
-    public static void Postfix(AddEventParams params) {
+    @SpirePrefixPatch
+    public static void Prefix(AddEventParams params) {
         EventFilter.registerEvent(params);
     }
 }

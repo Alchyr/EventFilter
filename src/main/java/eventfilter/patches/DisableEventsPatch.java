@@ -67,7 +67,7 @@ public class DisableEventsPatch {
             Iterator<String> eventIterator = AbstractDungeon.eventList.iterator();
             while (eventIterator.hasNext()) {
                 ID = eventIterator.next();
-                String className = EventFilter.IDToClassID.get(ID);
+                String className = EventFilter.IDToClassName.get(ID);
 
                 if (!EventFilter.enabled(className)) {
                     logger.info(" - " + ID + " removed from list.");
@@ -78,7 +78,7 @@ public class DisableEventsPatch {
             eventIterator = AbstractDungeon.shrineList.iterator();
             while (eventIterator.hasNext()) {
                 ID = eventIterator.next();
-                String className = EventFilter.IDToClassID.get(ID);
+                String className = EventFilter.IDToClassName.get(ID);
 
                 if (!EventFilter.enabled(className)) {
                     logger.info(" - " + ID + " removed from list.");
@@ -104,7 +104,7 @@ public class DisableEventsPatch {
             Iterator<String> eventIterator = AbstractDungeon.shrineList.iterator();
             while (eventIterator.hasNext()) {
                 ID = eventIterator.next();
-                String className = EventFilter.IDToClassID.get(ID);
+                String className = EventFilter.IDToClassName.get(ID);
 
                 if (!EventFilter.enabled(className)) {
                     logger.info(" - " + ID + " removed from list.");
@@ -127,7 +127,7 @@ public class DisableEventsPatch {
             Iterator<String> eventIterator = AbstractDungeon.specialOneTimeEventList.iterator();
             while (eventIterator.hasNext()) {
                 ID = eventIterator.next();
-                String className = EventFilter.IDToClassID.get(ID);
+                String className = EventFilter.IDToClassName.get(ID);
 
                 if (!EventFilter.enabled(className)) {
                     logger.info(" - " + ID + " removed from list.");

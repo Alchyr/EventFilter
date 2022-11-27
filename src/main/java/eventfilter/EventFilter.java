@@ -82,7 +82,7 @@ public class EventFilter implements
     }
 
     public static final Map<String, List<EventInfo>> modEvents = new HashMap<>(); //mod id -> event info (For display on event screen)
-    public static final Map<String, String> IDToClassID = new HashMap<>(); //event String ID -> event class name
+    public static final Map<String, String> IDToClassName = new HashMap<>(); //event String ID -> event class name
     public static final Map<String, Boolean> eventConfig = new HashMap<>(); //event class name -> enabled
 
     private static int id = 0; //used to match generated IDs
@@ -91,6 +91,13 @@ public class EventFilter implements
         modEvents.put("Slay the Spire", new ArrayList<>());
     }
 
+    public static boolean eventIDEnabled(String eventID) {
+        eventID = IDToClassName.get(eventID);
+        if (eventID == null)
+            return false;
+
+        return enabled(eventID);
+    }
     public static boolean enabled(String className) {
         if (eventConfig.getOrDefault(className, true))
         {
@@ -107,13 +114,13 @@ public class EventFilter implements
             ID = ID + id++;
         }
 
-        if (IDToClassID.containsKey(ID)) {
-            if (!IDToClassID.get(ID).equals(params.eventClass.getName())) {
+        if (IDToClassName.containsKey(ID)) {
+            if (!IDToClassName.get(ID).equals(params.eventClass.getName())) {
                 logger.info("Second event with ID " + ID + " registered, with a different event class.");
             }
         }
         else {
-            IDToClassID.put(ID, params.eventClass.getName());
+            IDToClassName.put(ID, params.eventClass.getName());
         }
 
         String modID;
@@ -148,17 +155,17 @@ public class EventFilter implements
 
     private static void registerEvent(String ID, Class<? extends AbstractEvent> eventClass, EventUtils.EventType type) {
         modEvents.get("Slay the Spire").add(new EventInfo(ID, eventClass, type));
-        IDToClassID.put(ID, eventClass.getName());
+        IDToClassName.put(ID, eventClass.getName());
         eventConfig.putIfAbsent(eventClass.getName(), true);
     }
     private static void registerEvent(String ID, Class<? extends AbstractEvent> eventClass, EventUtils.EventType type, String... acts) {
         modEvents.get("Slay the Spire").add(new EventInfo(ID, eventClass, type, acts));
-        IDToClassID.put(ID, eventClass.getName());
+        IDToClassName.put(ID, eventClass.getName());
         eventConfig.putIfAbsent(eventClass.getName(), true);
     }
     private static void registerEvent(String ID, Class<? extends AbstractEvent> eventClass, String actID) {
         modEvents.get("Slay the Spire").add(new EventInfo(ID, eventClass, actID));
-        IDToClassID.put(ID, eventClass.getName());
+        IDToClassName.put(ID, eventClass.getName());
         eventConfig.putIfAbsent(eventClass.getName(), true);
     }
     public static void registerBasegameEvents() { //called in prefix patch on post initialize to ensure it happens first

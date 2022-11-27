@@ -7,7 +7,7 @@
     <name>Event Filter</name>
     <groupId>eventfilter</groupId>
     <artifactId>eventfilter</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.111</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -51,6 +51,14 @@
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
             <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
+        </dependency>
+
+        <dependency>
+            <groupId>battletower</groupId>
+            <artifactId>battletower</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2724117330/BattleTowers.jar</systemPath>
         </dependency>
     </dependencies>
 
