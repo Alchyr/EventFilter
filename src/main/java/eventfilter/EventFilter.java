@@ -196,22 +196,22 @@ public class EventFilter implements
 
         //Act 1
         registerEvent(BigFish.ID, BigFish.class, Exordium.ID);
-        registerEvent(Cleric.ID, Cleric.class, Exordium.ID);
-        registerEvent(DeadAdventurer.ID, DeadAdventurer.class, Exordium.ID);
+        registerEvent(Cleric.ID, Cleric.class, Exordium.ID); //Gold >=35
+        registerEvent(DeadAdventurer.ID, DeadAdventurer.class, Exordium.ID); //Floor 6+
         registerEvent(GoldenIdolEvent.ID, GoldenIdolEvent.class, Exordium.ID);
         registerEvent(GoldenWing.ID, GoldenWing.class, Exordium.ID);
         registerEvent(GoopPuddle.ID, GoopPuddle.class, Exordium.ID);
         registerEvent(Sssserpent.ID, Sssserpent.class, Exordium.ID);
         registerEvent(LivingWall.ID, LivingWall.class, Exordium.ID);
-        registerEvent(Mushrooms.ID, Mushrooms.class, Exordium.ID);
+        registerEvent(Mushrooms.ID, Mushrooms.class, Exordium.ID); //Floor 6+
         registerEvent(ScrapOoze.ID, ScrapOoze.class, Exordium.ID);
         registerEvent(ShiningLight.ID, ShiningLight.class, Exordium.ID);
 
         //Act 2
         registerEvent(Addict.ID, Addict.class, TheCity.ID);
         registerEvent(BackToBasics.ID, BackToBasics.class, TheCity.ID);
-        registerEvent(Beggar.ID, Beggar.class, TheCity.ID);
-        registerEvent(Colosseum.ID, Colosseum.class, TheCity.ID);
+        registerEvent(Beggar.ID, Beggar.class, TheCity.ID); //Gold >=75
+        registerEvent(Colosseum.ID, Colosseum.class, TheCity.ID); //Top half of map
         registerEvent(CursedTome.ID, CursedTome.class, TheCity.ID);
         registerEvent(DrugDealer.ID, DrugDealer.class, TheCity.ID);
         registerEvent(ForgottenAltar.ID, ForgottenAltar.class, TheCity.ID);
@@ -225,7 +225,7 @@ public class EventFilter implements
         //Act 3
         registerEvent(Falling.ID, Falling.class, TheBeyond.ID);
         registerEvent(MindBloom.ID, MindBloom.class, TheBeyond.ID);
-        registerEvent(MoaiHead.ID, MoaiHead.class, TheBeyond.ID);
+        registerEvent(MoaiHead.ID, MoaiHead.class, TheBeyond.ID); //Has golden idol or hp <50%
         registerEvent(MysteriousSphere.ID, MysteriousSphere.class, TheBeyond.ID);
         registerEvent(SensoryStone.ID, SensoryStone.class, TheBeyond.ID);
         registerEvent(TombRedMask.ID, TombRedMask.class, TheBeyond.ID);

@@ -26,11 +26,13 @@ public class EventInfo {
         this.ID = ID;
         this.eventClass = params.eventClass;
 
-        if (params.playerClass != null) {
+        if (params.playerClasses != null && !params.playerClasses.isEmpty()) {
             characters = new HashSet<>();
 
+            Set<AbstractPlayer.PlayerClass> playerClassSet = new HashSet<>(params.playerClasses);
+
             for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
-                if (p.chosenClass == params.playerClass) {
+                if (playerClassSet.remove(p.chosenClass)) {
                     String name = p.getLocalizedCharacterName();
                     if (name != null)
                         characters.add(name);
@@ -38,8 +40,8 @@ public class EventInfo {
                 }
             }
 
-            if (characters.isEmpty()) {
-                characters.add(params.playerClass.name());
+            for (AbstractPlayer.PlayerClass leftover : playerClassSet) {
+                characters.add(leftover.name());
             }
         }
 

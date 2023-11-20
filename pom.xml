@@ -7,7 +7,7 @@
     <name>Event Filter</name>
     <groupId>eventfilter</groupId>
     <artifactId>eventfilter</artifactId>
-    <version>1.1.111</version>
+    <version>1.1.112</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
-            <version>5.0.0</version>
+            <version>5.0.1</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1605833019/BaseMod.jar</systemPath>
             <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
